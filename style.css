@@ -1,0 +1,292 @@
+:root {
+  --white_color: #fff;
+  --dark_color: #000;
+  --aquahaze_color: #edf5f5;
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--white_color);
+  color: var(--dark_color);
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 10px;
+  max-width: 1100px;
+  background-color: var(--aquahaze_color);
+}
+
+.list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Flexbox */
+
+.flexbox__title {
+  margin: 0 0 20px 0;
+  text-align: center;
+}
+
+.flexbox__task-count {
+  display: block;
+  text-align: center;
+  background-color: var(--white_color);
+  text-transform: uppercase;
+}
+
+.flex-catalog {
+  padding: 15px 0;
+  margin: 0 -10px;
+}
+
+.flex-catalog__item {
+  min-height: 50px;
+  margin: 10px;
+  width: calc(100% / 4 - 20px);
+}
+
+.flex-catalog__item img {
+  display: block;
+  margin: 0 auto;
+}
+
+.flex-catalog__item-name {
+  margin: 0;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Task1 */
+
+.flex-catalog.task1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Task2 */
+
+.flex-catalog.task2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* Task3 */
+
+.flex-catalog.task3 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.flex-catalog.task3 .flex-catalog__item:first-child {
+  align-self: center;
+}
+
+/* Task4 */
+
+.flex-catalog.task4 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+.flex-catalog.task4 .flex-catalog__item:first-child {
+  align-self: center;
+}
+
+/* Inline-block */
+
+.inline-block__title {
+  margin: 0 0 20px 0;
+  text-align: center;
+}
+
+.ib-catalog {
+  padding: 15px 0;
+  font-size: 0;
+  margin: 0 -10px;
+}
+
+.ib-catalog__item {
+  display: inline-block;
+  vertical-align: top;
+  min-height: 50px;
+  margin: 10px;
+  width: calc(100% / 4 - 20px);
+}
+
+.ib-catalog__item img {
+  display: block;
+  margin: 0 auto;
+}
+
+.ib-catalog__item-name {
+  margin: 0;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* float */
+
+.float__title {
+  margin: 0 0 20px 0;
+  text-align: center;
+}
+
+.float-catalog {
+  padding: 15px 0;
+  margin: 0 -10px;
+}
+
+.float-catalog:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.float-catalog__item {
+  float: left;
+  min-height: 50px;
+  margin: 10px;
+  width: calc(100% / 4 - 20px);
+}
+
+.float-catalog__item:nth-child(4n + 5) {
+  clear: both;
+}
+
+.float-catalog__item img {
+  display: block;
+  margin: 0 auto;
+}
+
+.float-catalog__item-name {
+  margin: 0;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Table */
+
+.table__title {
+  margin: 0 0 20px 0;
+  text-align: center;
+}
+
+.table-catalog {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+tbody,
+tr {
+  width: 100%;
+}
+
+.table-catalog__item {
+  min-height: 50px;
+  padding: 10px;
+}
+
+.table-catalog__item img {
+  display: block;
+  margin: 0 auto;
+}
+
+.table-catalog__item-name {
+  margin: 0;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* div-table */
+
+.div-table__title {
+  margin: 0 0 20px 0;
+  text-align: center;
+}
+
+.div-table-catalog {
+  display: table;
+  width: 100%;
+}
+
+.div-table__row {
+  display: table-row;
+}
+
+.div-table-catalog__item {
+  display: table-cell;
+  width: 25%;
+  min-height: 50px;
+  padding: 10px;
+}
+
+.div-table-catalog__item img {
+  display: block;
+  margin: 0 auto;
+}
+
+.div-table-catalog__item-name {
+  margin: 0;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Accordion */
+
+.accordion__title {
+  margin: 0 0 20px 0;
+  text-align: center;
+}
+
+.accordion__item {
+  margin-bottom: 15px;
+}
+
+.accordion__header {
+  padding: 10px;
+  font-size: 20px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.accordion__content {
+  border: 1px solid var(--dark_color);
+  border-top: transparent;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  will-change: max-height;
+  padding: 0 30px;
+  transition: all 0.2s ease-in;
+  box-sizing: content-box;
+}
+
+.accordion__item--opened .accordion__content {
+  padding: 30px;
+  opacity: 1;
+}
+
